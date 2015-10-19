@@ -1,0 +1,49 @@
+<h2 class="header">Sales</h2>
+<hr>
+
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+          <select class="browser-default" id="product" ng-model="ctrl.newItem.product" 
+                  ng-options="product.name for product in ctrl.products">
+          </select>
+      </div>
+      <div class="input-field col s6">
+        <input id="last_name" type="number" class="validate" ng-model="ctrl.newItem.quantity">
+        <label for="value">Quantity (format:99999)</label>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn green" ng-click="ctrl.addItem()"><i class="material-icons right">add</i>Add</a>
+  </form>
+</div>
+
+<table>
+	<thead>
+	  <tr>
+	      <th data-field="id">Name</th>
+	      <th data-field="name">Price</th>
+	      <th data-field="price">Quantity</th>
+        <th data-field="price">Total Price</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr ng-repeat="sale_item in ctrl.selected.sale_items">
+	    <td><span ng-bind="sale_item.name"></span></td>
+	    <td><span ng-bind="sale_item.value | currency: 'R$' : 2"></span></td>
+	    <td><span ng-bind="sale_item.quantity"></span></td>
+      <td><span>{{ (sale_item.quantity * sale_item.value) | currency: 'R$' : 2 }}</span></td>
+	  </tr>
+	</tbody>
+</table>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large green" ng-click="ctrl.save()">
+      <i class="large material-icons">shopping_cart</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red" ng-click="ctrl.cancel()"><i class="material-icons">clear</i></i></a></li>
+    </ul>
+  </div>
+<script> 
+</script>

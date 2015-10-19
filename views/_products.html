@@ -1,0 +1,31 @@
+<h2 class="header">Products</h2>
+<hr>
+
+<div class="row" ng-if="ctrl.selected">
+  <form class="col s12" ng-submit="ctrl.save()">
+      <div class="input-field col s6">
+        <input ng-model="ctrl.selected.name" id="name" type="text" class="validate">
+        <label for="name">Name</label>
+      </div>
+      <div class="input-field col s6">
+        <input ng-model="ctrl.selected.value" id="value" type="number" class="validate">
+        <label for="value">Value (format:99999.99)</label>
+      </div>
+    <a class="waves-effect waves-light btn green" ng-click="ctrl.save()"><i class="material-icons right">save</i>Save</a>
+    <a class="waves-effect waves-light btn red" ng-click="ctrl.cancel()"><i class="material-icons right">clear</i>Cancel</a>
+  </form>
+</div>
+<ul class="collection">
+	<li class="collection-item avatar" ng-repeat="product in ctrl.products">
+	  <i class="material-icons circle green btn-floating" ng-click="ctrl.edit(product)">shop</i>
+	  <span class="title" ng-bind="product.name"></span>
+	  <p>Valor: {{product.value | currency : 'R$' : 2}}</p>
+	  <a href="#" class="secondary-content" ng-click="ctrl.destroy(product)"><i class="material-icons">delete</i></a>
+	</li>
+</ul>
+<div class="fixed-action-btn btn-flat" style="bottom: 45px; right: 24px;">
+  <a class="btn-floating btn-large teal" ng-click="ctrl.new()">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+<script></script>

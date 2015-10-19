@@ -1,0 +1,19 @@
+<h2 class="header">Sales Report</h2>
+<hr>
+<table>
+	<thead>
+	  <tr>
+	      <th data-field="id">Date</th>
+	      <th data-field="name">Price</th>
+	      <th data-field="price">Send NF-e</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr ng-repeat="sale in ctrl.sales">
+	    <td><span ng-bind="sale.date | date : 'dd/MM/yyyy'"></span></td>
+	    <td><span ng-bind="sale.value | currency : 'R$' : 2"></span></td>
+	    <td><a href="#"><i class="material-icons">print</i></a></td>
+	  </tr>
+	</tbody>
+</table>
+<script></script>

@@ -1,0 +1,16 @@
+{
+  "name": "msit-store",
+  "version": "1.0.0",
+  "description": "Vendas!",
+  "author": "@murta",
+  "engines": {
+    "node": "0.12.x",
+    "npm": "^2.11.3"
+  },
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

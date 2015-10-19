@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/vendor/materialize.min.css">
+    <link rel="stylesheet" href="./css/vendor/select.min.css">
+    <link rel="stylesheet" href="./css/custom/app.css">
+  </head>
+  <body ng-app="msit-store">
+    <nav>
+      <div class="nav-wrapper boxed">
+        <a href="#!" class="brand-logo">MSIT Store</a>
+        <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a ui-sref="products.index">Products</a></li>
+          <li><a ui-sref="sales.index">Sales</a></li>
+          <li><a ui-sref="sales.report">Sales Report</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-menu">
+          <li><a ui-sref="products.index">Products</a></li>
+          <li><a ui-sref="sales.index">Sales</a></li>
+          <li><a ui-sref="sales.report">Sales Report</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div ui-view></div>
+    </div>
+  </body>
+  <script src="./js/vendor/jquery.min.js"></script>
+  <script src="./js/vendor/materialize.min.js"></script>
+  <script src="./js/vendor/angular.min.js"></script>
+  <script src="./js/vendor/angular-ui-router.min.js"></script>
+  <script src="./js/vendor/angular-sanitize.min.js"></script>
+  <script src="./js/vendor/select.min.js"></script>
+  <script src="./js/custom/app.js"></script>
+  <script src="./js/custom/app.routes.js"></script>
+  <script src="./js/custom/products.controller.js"></script>
+  <script src="./js/custom/products.service.js"></script>
+  <script src="./js/custom/sales.controller.js"></script>
+  <script src="./js/custom/sales.service.js"></script>
+  <script src="./js/custom/nfe.service.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".button-collapse").sideNav();
+    });
+  </script>
+</html>
